@@ -2,9 +2,10 @@ Multi Dimensional Arrays
 ------------------------
 
 A multi dimensional array is simply a 1D array which contains references to 1D arrays of the same type.
-For simplicity these examples only use two dimensions but the following is consistent as the number of dimensions increases.
 
-In Java the arrays discussed so far are only in one dimension and are created as follows:
+_For simplicity these examples only use two dimensions but the following is consistent as the number of dimensions increases._
+
+The arrays discussed so far are only in one dimension and are created as follows:
 
     int[] array = new int[3];
 
@@ -40,11 +41,44 @@ To do this create a 2D array without specifying the lengths of the 1D arrays:
     jagged[0] = new int[6];
     jagged[1] = new int[2];
 
+### Initialising arrays
 ---
-## Use Cases
+Arrays can be initialised in a few ways in Java, they can be assigned values immediately after creation or assigned values after creation on separate lines.
+Assigning values at creation can be useful to clear up code in cases where the values of the array are already known.
+To create an array literal and assign values to each element at creation curly braces are used to contain the arrays.
 
-A 2D array can be thought of as a table where you access contents through a row and column
+    int[][] oneTen = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 3, 5, 7, 9}};
+    String[][] animals = {{"cat", "dog"}, {"crow", "robin"}};
 
+For instances where the values are not immediately known at creation, an empty array can be created with a predetermined size and then be filled in:
+
+    // Array with default values (int arrays will contain 0 in each element)
+    int[][] scores = new int[4][4];
+
+    for (int i = 0; i < grades.length; i++){
+        for (int k = 0; k < grades.length; k++) {
+            scores[i][k] = grades[i][k];
+        }
+    }
+
+Keeping in mind that the arrays in Java are arrays of arrays, the following two snippets of code are equivalent:
+
+    int[][] table = new int[3][4];
+
+and
+
+    int[][] table = new int[3][];
+    for (int i = 0; i < table.length; i++) {
+        table[i] = new int[4];
+    }
+
+
+
+![2D Array](http://i.stack.imgur.com/M75kn.png)
+
+---
+
+## Some Use Cases
 - Implementing games using a simple grid such as battleship or chess
 - Holding information better represented as a table
 - Multiplication Tables
