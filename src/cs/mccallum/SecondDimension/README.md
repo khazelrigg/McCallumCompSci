@@ -47,7 +47,9 @@ A 2D array can be thought of as a table where you access contents through a row 
 
 - Implementing games using a simple grid such as battleship or chess
 - Holding information better represented as a table
-
+- Multiplication Tables
+- Matrix multiplication
+- Images
 
 
 ---

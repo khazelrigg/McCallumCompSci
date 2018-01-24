@@ -12,21 +12,26 @@ public class TwoDimensionalArrays {
 
     public static void main(String[] args) {
         // Creating a 2D array
+        System.out.println("Basic 2D Array");
         int[][] testTable = new int[2][4];
         testTable[1][2] = 9;
         int[] row2 = testTable[1];
         row2[3] = 2;
-        System.out.println(Arrays.toString(row2));
-        System.out.println(Arrays.deepToString(testTable));
-        System.out.println(testTable[1][3] == 2);
 
+        System.out.println("row2 = " + Arrays.toString(row2) +
+                "\nArrays.deepToString(); " + Arrays.deepToString(testTable) +
+                "\ntestTable[1][3] == 2; " + (testTable[1][3] == 2));
+
+        System.out.println("\nJagged Array (2D array of varying size)");
         int[][] jagged = new int[2][];
         jagged[0] = new int[6];
         jagged[1] = new int[2];
+        System.out.println(Arrays.deepToString(jagged));
 
-        //int[][] table = createMultiplicationTable(10);
-        //System.out.println(Arrays.deepToString(table)); //Arrays.deep___ is used for 2D+ arrays
-        //printMultiplicationTable(table);
+        int[][] table = createMultiplicationTable(10);
+        // Use Arrays.deep* for multi dimensional arrays
+        printMultiplicationTable(table);
+        System.out.println("Arrays.deepToString();\n" + Arrays.deepToString(table));
     }
 
     private static int[][] createMultiplicationTable(int size) {
@@ -42,7 +47,7 @@ public class TwoDimensionalArrays {
     }
 
     private static void printMultiplicationTable(int[][] table) {
-        System.out.println("Multiplication table | " + table.length + "x" + table.length);
+        System.out.println("\nMultiplication table | " + table.length + "x" + table.length);
 
         for (int row = 0; row < table.length; row++) {
             for (int col = 0; col < table.length; col++) {
