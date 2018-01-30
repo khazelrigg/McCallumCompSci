@@ -23,6 +23,10 @@ public class HeapTesters {
         System.out.println(tester);
 
 
+        int[] otherArray = {20, 34, 56, 3, 7};
+        Heap merger = new Heap();
+        merger.merge(testArray, otherArray);
+        System.out.println("Merged: \t" + merger);
     }
 
 }
