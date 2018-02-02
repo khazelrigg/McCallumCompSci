@@ -21,18 +21,6 @@ public class BinarySearch {
      * @return the index of goal in array, -1 if not in array
      */
     private static int binarySearch(int[] array, int goal) {
-        /*
-        T = target
-        A = array
-
-        1. Set L to 0 and R to n − 1.
-        2. If L > R, the search terminates as unsuccessful.
-        3. Set m (the position of the middle element) to the floor (the largest previous integer) of (L + R) / 2.
-        4. If Am < T, set L to m + 1 and go to step 2.
-        5. If Am > T, set R to m − 1 and go to step 2.
-        6. Now Am = T, the search is done; return m.
-        */
-
         int left = 0;
         int right = array.length - 1;
 
@@ -59,10 +47,6 @@ public class BinarySearch {
                 right = middle - 1;
             }
         }
-
-
-
-
 
     }
 
