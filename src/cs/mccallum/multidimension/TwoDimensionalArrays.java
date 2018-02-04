@@ -1,4 +1,4 @@
-package cs.mccallum.SecondDimension;
+package cs.mccallum.multidimension;
 /*
 CREATED: 1/23/18
 BY: Kameron Hazelrigg
@@ -57,6 +57,7 @@ public class TwoDimensionalArrays {
         }
 
         /*
+        The same thing using a foreach loop
         for (int[] row : table) {
             for (int number : row) {
                 System.out.printf("%4d", number);
