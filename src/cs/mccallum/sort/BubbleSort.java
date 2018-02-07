@@ -1,9 +1,6 @@
 package cs.mccallum.sort;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-class BubbleSort {
+class BubbleSort implements Sorter {
 
 
     /*
@@ -11,7 +8,7 @@ class BubbleSort {
     it is the values are swapped which "bubbles" the greater numbers to the right of the array. The array is sorted when
     no more swaps are performed. The complexity of BubbleSort is O(n²)
      */
-    static int[] bubbleSort(int[] array) {
+    public int[] sort(int[] array) {
         boolean swapped;
         do {
             swapped = false;
@@ -25,6 +22,11 @@ class BubbleSort {
             }
         } while (swapped);
         return array;
+    }
+
+    @Override
+    public String getName() {
+        return "Bubble Sort";
     }
 
 }

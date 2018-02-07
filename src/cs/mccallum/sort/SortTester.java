@@ -6,10 +6,14 @@ public class SortTester {
 
     public static void main(String[] args) {
         int[] sortMe = {4, 2, 6, 12, 99, 49, 50, 34, 212, 45, 90};
-        System.out.println("Original: " + Arrays.toString(sortMe) + " | IsSorted: " + isSorted(sortMe));
 
-        int[] bubbled = BubbleSort.bubbleSort(sortMe);
-        System.out.println("Bubble Sorted: " + Arrays.toString(bubbled) + " | IsSorted: " + isSorted(bubbled));
+        Sorter[] sorters = {new BubbleSort(), new InsertionSort()};
+
+        for (Sorter sorter : sorters) {
+            int[] sortedArray = sorter.sort(sortMe);
+            System.out.println(sorter.getName() + ":\t" + Arrays.toString(sortedArray) + "\tSorted: " + isSorted(sortedArray));
+        }
+
     }
 
     private static boolean isSorted(int[] array) {
