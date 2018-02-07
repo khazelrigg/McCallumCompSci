@@ -5,10 +5,12 @@ import java.util.*;
 public class SortTester {
 
     public static void main(String[] args) {
-        Sorter[] sorters = {new Shellsort(), new InsertionSort(), new BubbleSort()};
+        Sorter[] sorters = {new Shellsort(), new MergeSort(), new QuickSort()};
         double[] doubleTimes = new double[sorters.length];
         int runs = 10;
-        int arraySize = 10000;
+        int arraySize = 100000;
+
+        System.out.println("Average sorting time of random " + arraySize + " element array");
 
         for (int s = 0; s < sorters.length; s++) {
             Sorter sorter = sorters[s];
@@ -17,16 +19,13 @@ public class SortTester {
                 int[] sortMe = getShuffledInts(arraySize);
                 // Timer to record times
                 long startTime = System.nanoTime();
-                sorter.sort(sortMe);
+                System.out.println(isSorted(sorter.sort(sortMe)));
                 long endTime = System.nanoTime();
                 double milli = (endTime - startTime) / 1000000.0;
-                doubleTimes[s] = doubleTimes[s] + milli; //Add time to total
+                doubleTimes[s] = doubleTimes[s] + milli;
+                //Add time to total
             }
-        }
-
-        System.out.println("Average sorting time of random " + arraySize + " element array");
-        for (int i = 0; i < sorters.length; i++) {
-            System.out.println(sorters[i].getName() + ": " + doubleTimes[i] / runs + " ms.");
+            System.out.println(sorter.getName() + ": " + doubleTimes[s] / runs + " ms.");
         }
 
     }
